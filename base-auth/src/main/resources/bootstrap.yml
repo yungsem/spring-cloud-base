@@ -12,7 +12,9 @@ spring:
       discovery:
         server-addr: localhost:8858
         ip: 192.168.31.23
+        namespace: 790612ee-dc07-41d2-96e9-8dd8b32d2269
       config:
         server-addr: localhost:8858
         group: DEFAULT_GROUP
         file-extension: yml
+        namespace: 790612ee-dc07-41d2-96e9-8dd8b32d2269
