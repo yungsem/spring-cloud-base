@@ -1,21 +1,19 @@
-package com.yungsem.mdm;
+package com.yungsem.auth;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@MapperScan("com.yungsem.**.mapper")
-@EnableResourceServer // 开启资源保护
+@EnableFeignClients(basePackages = {"com.yungsem.mdm.feign"}) // 添加对 feign api 包的扫描
 @EnableCaching
 @SpringBootApplication
 @EnableDiscoveryClient
-public class BaseMdmApplication {
+public class BaseAuthApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BaseMdmApplication.class, args);
+        SpringApplication.run(BaseAuthApplication.class, args);
     }
 
 }

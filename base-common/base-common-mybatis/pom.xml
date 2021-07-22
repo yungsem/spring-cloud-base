@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>base-mdm</artifactId>
+        <artifactId>base-common</artifactId>
         <groupId>com.yungsem</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>base-mdm-biz</artifactId>
+    <artifactId>base-common-mybatis</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -17,22 +17,24 @@
     </properties>
 
     <dependencies>
+        <!--self-->
         <dependency>
             <groupId>com.yungsem</groupId>
-            <artifactId>base-mdm-api</artifactId>
+            <artifactId>base-common-security</artifactId>
+        </dependency>
+        <!--mybatis-plus start-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yungsem</groupId>
-            <artifactId>base-common-mybatis</artifactId>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <!--mybatis-plus end-->
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.3.5.RELEASE</version>
-            </plugin>
-        </plugins>
-    </build>
 </project>

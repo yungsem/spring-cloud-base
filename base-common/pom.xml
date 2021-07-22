@@ -3,24 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>base-mdm</artifactId>
+        <artifactId>spring-cloud-base</artifactId>
         <groupId>com.yungsem</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>base-mdm-api</artifactId>
+    <artifactId>base-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>base-common-model</module>
+        <module>base-common-mybatis</module>
+        <module>base-common-security</module>
+        <module>base-common-feign</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
-    <dependencies>
-        <!--self-->
-        <dependency>
-            <groupId>com.yungsem</groupId>
-            <artifactId>base-common-feign</artifactId>
-        </dependency>
-    </dependencies>
 </project>

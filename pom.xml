@@ -6,6 +6,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>base-mdm</module>
+        <module>base-common</module>
+        <module>base-gateway</module>
+        <module>base-auth</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -30,6 +33,31 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.yungsem</groupId>
+                <artifactId>base-common-feign</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yungsem</groupId>
+                <artifactId>base-common-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yungsem</groupId>
+                <artifactId>base-common-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yungsem</groupId>
+                <artifactId>base-common-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yungsem</groupId>
+                <artifactId>base-mdm-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--spring-cloud start-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -80,6 +108,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.7.5</version>
             </dependency>
             <!--other end-->
         </dependencies>

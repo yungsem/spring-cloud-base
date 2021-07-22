@@ -1,9 +1,7 @@
 package com.yungsem.mdm.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.yungsem.basecommon.pojo.entity.common.BaseEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.yunsem.common.model.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,16 +12,12 @@ import lombok.EqualsAndHashCode;
  * @version 1.0
  * @since 2020-08-21
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("rbac_user")
-@ApiModel(value = "用户", description = "用户")
+@EqualsAndHashCode(callSuper = true)
+@TableName("mdm_user")
 public class User extends BaseEntity {
     private static final long serialVersionUID = 1L;
-    @ApiModelProperty(value = "用户名", example = "用户名")
     private String username;
-    @ApiModelProperty(value = "密码", example = "密码")
     private String password;
-    @ApiModelProperty(value = "用户姓名", example = "用户姓名")
     private String realName;
 }
