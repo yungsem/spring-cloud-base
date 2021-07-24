@@ -1,8 +1,10 @@
 package com.yungsem.mdm.business.controller.remote;
 
-import com.yungsem.mdm.business.service.remote.RemoteUserService;
+import com.yungsem.mdm.business.service.remote.UserRemoteService;
 import com.yungsem.mdm.dto.UserDTO;
 import com.yungsem.security.annotation.AuthIgnore;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,13 +19,15 @@ import javax.annotation.Resource;
 @RefreshScope
 @RestController
 @RequestMapping("/remote/user")
-public class RemoteUserController {
+@Api(tags = "用户管理-远程调用")
+public class UserRemoteController {
     @Resource
-    private RemoteUserService remoteUserService;
+    private UserRemoteService userRemoteService;
 
     @AuthIgnore
     @GetMapping("/getByUsername")
+    @ApiOperation(value = "获取认证用户")
     public UserDTO getUserByUsername(@RequestParam(value = "username") String username) {
-        return remoteUserService.getUserByUsername(username);
+        return userRemoteService.getUserByUsername(username);
     }
 }

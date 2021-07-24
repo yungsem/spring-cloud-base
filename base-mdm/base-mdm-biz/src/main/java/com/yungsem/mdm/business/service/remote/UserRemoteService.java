@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  * @since 2020-08-16
  */
 @Service
-public class RemoteUserService {
+public class UserRemoteService {
     @Resource
     private UserService userService;
 

@@ -25,6 +25,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) throws Exception {
         String[] urls = authIgnoreConfig.getIgnoreUrls().stream().distinct().toArray(String[]::new);
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity.authorizeRequests();
+        registry.antMatchers(
+                "/v2/api-docs*", "/v3/api-docs*",
+                "/swagger-resources/configuration/ui",
+                "/swagger-resources/configuration/security",
+                "/swagger-resources",
+                "/*.html", "/*.js", "/*.css",
+                "/*.gif", "/*.jpg", "/*.png", "/*.ico"
+        ).permitAll();
         registry.antMatchers(urls).permitAll();
         registry.anyRequest().authenticated()
                 .and().csrf().disable();

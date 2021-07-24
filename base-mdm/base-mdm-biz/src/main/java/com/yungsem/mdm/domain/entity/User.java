@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("mdm_user")
+@TableName("user")
 public class User extends BaseEntity {
     private static final long serialVersionUID = 1L;
     private String username;
